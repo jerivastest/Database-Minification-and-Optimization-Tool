@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.58.0'
+project:
+    name: Database-Minification-and-Optimization-Tool
+    package:
+        name: Database-Minification-and-Optimization-Tool
+        api_version: '54.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Database-Minification-and-Optimization-Tool/tests
+            options:
+                outputdir: robot/Database-Minification-and-Optimization-Tool/results
+
+    robot_testdoc:
+        options:
+            path: robot/Database-Minification-and-Optimization-Tool/tests
+            output: robot/Database-Minification-and-Optimization-Tool/doc/Database-Minification-and-Optimization-Tool_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
